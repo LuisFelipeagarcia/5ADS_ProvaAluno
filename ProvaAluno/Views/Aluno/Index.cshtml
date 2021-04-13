@@ -1,0 +1,77 @@
+﻿@model IEnumerable<ProvaAluno.Models.Aluno>
+
+@{
+    Layout = "_LayoutIES";
+}
+
+@section styles{
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+}
+<p>
+    <div class="card-header text-primary bg-light text-center h1">
+        Lista de Alunos
+    </div>
+
+</p>
+<div class="card-body">
+    <table class="table table-striped" id="tabela-departamentos">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlunoID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Curso)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Endereco)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RA)
+                </th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AlunoID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curso)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Endereco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RA)
+                </td>
+
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section ScriptPage{
+    <!-- jQuery -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+
+    <!-- DataTables -->
+    <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+}
